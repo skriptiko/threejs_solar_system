@@ -1,0 +1,1 @@
+var objObj = {d: "1"}
