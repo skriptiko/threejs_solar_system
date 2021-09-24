@@ -15,9 +15,7 @@ window.onload = function() {
 	var textureLoader = new THREE.TextureLoader();
 	var d, dPlanet, dMoon, dMoonVec = new THREE.Vector3();
 	var clock = new THREE.Clock();
-
 	var sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune;
-
 	var t = 0;
 
 	init();
@@ -31,7 +29,7 @@ window.onload = function() {
 			var vertex = new THREE.Vector3();
 			vertex.x = Math.sin(180/Math.PI*i)*_radius;
 			vertex.z = Math.cos(180/Math.PI*i)*_radius;
-		
+
 			geometry.vertices.push(vertex);
 		}
 
@@ -152,7 +150,7 @@ window.onload = function() {
 
 		// ---- mercury -----------------------------
 		mercury = addPlanet(60, 20, 20, "../model/mercury.jpg", 0xffffff, true);
-	
+
 		// ---- venus -----------------------------
 		venus = addPlanet(90, 20, 20, "../model/venus.jpg", 0xffffff, true);
 
@@ -161,10 +159,10 @@ window.onload = function() {
 
 		// ---- mars -----------------------------
 		mars = addPlanet(80, 20, 20, "../model/mars.jpg", 0xffffff, true);
-		
+
 		// ---- jupiter -----------------------------
 		jupiter = addPlanet(340, 20, 20, "../model/jupiter.jpg", 0xffffff, true);
-	
+
 		// ---- saturn -----------------------------
 		saturn = addPlanet(310, 20, 20, "../model/saturn.jpg", 0xffffff, true);
 
@@ -188,7 +186,7 @@ window.onload = function() {
 
 		// ---- uranus -----------------------------
 		uranus = addPlanet(110, 20, 20, "../model/uranus.png", 0xffffff, true);
-	
+
 		// ---- neptune -----------------------------
 		neptune = addPlanet(100, 20, 20, "../model/neptune.jpg", 0xffffff, true);
 
@@ -204,7 +202,7 @@ window.onload = function() {
 		container.appendChild( stats.dom );
 		window.addEventListener( 'resize', onWindowResize, false );
 
-		
+
 		var renderModel = new THREE.RenderPass( scene, camera );
 
 		var effectFilm = new THREE.FilmPass( 0.35, 0.75, 2048, false );
@@ -269,7 +267,7 @@ window.onload = function() {
 		neptune.position.z = Math.cos(t*0.03)*180000;
 
 		t += Math.PI/180*2*0.1;
-	
+
 		// camera.lookAt(saturnRing.position);
 		// camera.lookAt(saturnRingGeom.position);
 		// camera.position.z = saturnRing.position.z;
@@ -286,7 +284,7 @@ window.onload = function() {
 		} else {
 			d = ( dPlanet - radius * 1.01 );
 		}
-		
+
 		controls.movementSpeed = 0.66 * d;
 		controls.update( delta );
 		composer.render( delta );
